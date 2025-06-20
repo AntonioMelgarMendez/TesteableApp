@@ -14,10 +14,10 @@
       <SelectionState runConfigName="TipSliderTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="MainActivity (1)">
+      <SelectionState runConfigName="ChangeNumberOfPeopleTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="enable_rounding_and_verify_tip_changes()">
+      <SelectionState runConfigName="VisibleUITest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
