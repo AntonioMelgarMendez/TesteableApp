@@ -21,16 +21,13 @@ class TipSliderTest {
   fun change_tip_percentage_slider_and_verify_tip() {
     composeTestRule.onNodeWithText("Monto de la cuenta").performTextInput("100")
 
-    // Mover el slider al 20%
     composeTestRule.onNode(hasText("Porcentaje de propina: 15%"))
       .performSemanticsAction(SemanticsActions.SetProgress) {
         it(20f)
       }
 
-    // Verificar el nuevo texto del porcentaje
     composeTestRule.onNodeWithText("Porcentaje de propina: 20%").assertIsDisplayed()
 
-    // Verificar resultado de propina
     composeTestRule.onNodeWithText("Propina: $20.00").assertIsDisplayed()
   }
 }
