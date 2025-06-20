@@ -4,6 +4,7 @@ import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performSemanticsAction
 import androidx.compose.ui.test.performTextInput
@@ -21,10 +22,9 @@ class TipSliderTest {
   fun change_tip_percentage_slider_and_verify_tip() {
     composeTestRule.onNodeWithText("Monto de la cuenta").performTextInput("100")
 
-    composeTestRule.onNode(hasText("Porcentaje de propina: 15%"))
-      .performSemanticsAction(SemanticsActions.SetProgress) {
-        it(20f)
-      }
+    composeTestRule.onNodeWithTag("tipSlider")
+      .performSemanticsAction(SemanticsActions.SetProgress) { it(20f) }
+
 
     composeTestRule.onNodeWithText("Porcentaje de propina: 20%").assertIsDisplayed()
 

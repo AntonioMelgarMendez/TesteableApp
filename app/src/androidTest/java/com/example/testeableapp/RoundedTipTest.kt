@@ -4,6 +4,7 @@ import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performSemanticsAction
@@ -24,7 +25,7 @@ class RoundedTipTest {
 
     composeTestRule.onNodeWithText("Propina: $14.33").assertExists()
 
-    composeTestRule.onNodeWithText("Redondear propina").performClick()
+    composeTestRule.onNodeWithTag("roundTipCheckbox").performClick()
 
     composeTestRule.onNodeWithText("Propina: $15.00").assertExists()
   }
